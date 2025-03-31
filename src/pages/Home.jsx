@@ -3,6 +3,7 @@ import { Sidebar } from "primereact/sidebar";
 import { useSearchParams } from "react-router-dom";
 import { SiGooglemeet } from "react-icons/si";
 import { ArrowUpRight01Icon, GithubIcon, Linkedin01Icon, Linkedin02Icon } from "hugeicons-react";
+import { projects } from "../utilities/data";
 
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,20 +14,28 @@ const Home = () => {
     setSearchParams(searchParams);
   }
 
-  const projects = [
-    { name: 'Family Investment Fund', type: 'FINANCE', banner: '/images/fiflogo.webp', description: 'Treasury System for accounts management and loan processing and tracking' },
-    { name: 'Nalmart | E-Marketplace', type: 'WEB DEVELOPMENT', banner: '/images/nalmart.png', description: 'This is a project description' },
-    { name: 'IDM FoodHub', type: 'WEB DEVELOPMENT', banner: '/images/idmfoodhub.png', description: 'This is a project description' },
-    { name: 'IDM VedorHub', type: 'WEB DEVELOPMENT', banner: '/images/idmvendorhub.png', description: 'This is a project description' },
+  const projects_ = [
+    { 
+      name: 'Family Investment Fund', 
+      type: 'FINANCE', 
+      banner: '/images/fiflogo.webp', 
+      description: 'Treasury System for accounts management and loan processing and tracking' 
+    },
+    { name: 'Sacco Ops Hub', type: 'FINANCE', banner: '/images/fiflogo.webp', description: 'Finacial Sacco management | Treasury System for accounts management and loan processing and tracking' },
+    { name: 'Nalmart | E-Marketplace', type: 'E-COMMERCE', banner: '/images/nalmart.png', description: 'This is a project description' },
+    { name: 'Nalmart Vendor Hub', type: 'CRM & OPS', banner: '/images/nalmart.png', description: 'This is a project description' },
+    { name: 'IDM FoodHub', type: 'DELIVERY SERVICES', banner: '/images/idmfoodhub.png', description: 'Fresh and Fast foods delivery services' },
+    { name: 'IDM VedorHub', type: 'CRM & OPS', banner: '/images/idmvendorhub.png', description: 'This is a project description' },
     { name: 'ODD-Model V1', type: 'AI/MACHINE LEARNING', banner: '/images/banner.png', description: 'Orange Disease Detection Model' },
-    { name: 'Project 6', type: 'FINANCE APPLICATION', banner: '/images/banner.png', description: 'This is a project description' },
-    { name: 'Project 7', type: 'HEALTH APPLICATION', banner: '/images/banner.png', description: 'This is a project description' },
-    { name: 'Project 8', type: 'ECOMERCE APPLICATION', banner: '/images/banner.png', description: 'This is a project description' },
+    { name: 'Image Generator | GAN', type: 'AI/MACHINE LEARNING', banner: '/images/banner.png', description: 'This is a project description' },
+    { name: 'Suave Music PR', type: 'PUBLIC RELATIONS', banner: '/images/suavemusicpr.png', description: 'This is a project description' },
+    { name: 'Remolders', type: 'E-LEARNING', banner: '/images/remolders.jpeg', description: 'This is a project description' },
+    { name: 'Nzuri Marketplace', type: 'DELIVERY SERVICES | MOBILE APP', banner: '/images/remolders.jpeg', description: 'Ffresh food delivery application' },
   ]
 
   return (
     <div className="h-screen relative flex flex-col bg-opacity-90">
-      <section className="flex items-center justify-between gap-4 py-2 bg-orange-50 w-full">
+      <section className="flex items-center justify-between gap-4 py-2 bg-orange-50 w-full px-[8vw]">
         <p></p>
         <p className="font-medium text-xs">Let's break that problem together</p>
         <section className="flex items-center gap-2">
@@ -35,7 +44,7 @@ const Home = () => {
         </section>
       </section>
 
-      <nav className="w-full flex items-center sticky top-0 justify-between px-[8vw] py-2 bg-blue-50 border-b shadow">
+      <nav className="w-full flex items-center sticky top-0 justify-between px-[8vw] py-2 bg-gray-50 border-b shadow">
         <section>
           <img src="/favicons/apple-touch-icon.png" alt="" className="w-12 h-12 rounded-full border" />
         </section>
@@ -54,9 +63,9 @@ const Home = () => {
 
         <section className="mb-20 px-4 md:px-16">
           <h1 className="opacity-50 text-[1.3rem] my-2">Projects</h1>
-          <section className="grid gap-2 sm:grid-cols-2 md:grid-cols-4">
+          <section className="grid gap-x-2 gap-y-8 sm:grid-cols-2 md:grid-cols-4">
             { projects?.map((project, idx) => (
-              <div className="border border-opacity-10 rounded-lg flex flex-col justify-between">
+              <div className="border border-opacity-10 hover:shadow-xl cursor-pointer rounded-lg flex flex-col justify-between">
                 <div className="px-4 py-2 ">
                   <p className="text-orange-800 font-bold opacity-50 text-xs flex justify-between items-center">{ project?.type} <span className="text-blue-500 opacity-90"><ArrowUpRight01Icon size={16}/></span></p>
                   <p className="text-lg ">{ project?.name}</p>
